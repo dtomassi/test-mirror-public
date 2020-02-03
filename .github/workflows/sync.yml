@@ -13,15 +13,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Configure user
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git config user.email
-        git config user.name
+    # - name: Configure user
+    #   run: |
+    #     git config --local user.email "action@github.com"
+    #     git config --local user.name "GitHub Action"
+    #     git config user.email
+    #     git config user.name
 
     - name: Push to public repo
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.TEST_TOKEN }}
-        repository: 'BugSwarm/test-mirror-public'
+      run: git push "https://kingdido999:${{ secrets.TEST_TOKEN }}@github.com/BugSwarm/test-mirror-public.git"
+      # uses: ad-m/github-push-action@master
+      # with:
+      #   github_token: ${{ secrets.TEST_TOKEN }}
+      #   repository: 'BugSwarm/test-mirror-public'
