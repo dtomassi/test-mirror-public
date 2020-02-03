@@ -13,4 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Push to public repo
-      run: git push --prune git@github.com:BugSwarm/test-mirror-public.git
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: 'c9be24c63897a08957e2618c8d7076343d66fd92'
+        repository: 'BugSwarm/test-mirror-public'
