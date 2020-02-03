@@ -15,5 +15,5 @@ jobs:
     - name: Push to public repo
       uses: ad-m/github-push-action@master
       with:
-        github_token: '6bb18db7b1dd941e9ea21053735fd86e2a49304f'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         repository: 'BugSwarm/test-mirror-public'
