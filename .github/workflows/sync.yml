@@ -15,8 +15,8 @@ jobs:
 
     - name: Configure user
       run: |
-        git config --global user.email 'pcding@ucdavis.edu'
-        git config --global user.name 'Pengcheng Ding'
+        git config --global user.email "pcding@ucdavis.edu"
+        git config --global user.name "kingdido999"
 
     - name: Push to public repo
       uses: ad-m/github-push-action@master
