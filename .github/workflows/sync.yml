@@ -15,11 +15,11 @@ jobs:
 
     - name: Configure user
       run: |
-        git config --global user.email "pcding@ucdavis.edu"
-        git config --global user.name "kingdido999"
+        git config user.email
+        git config user.name
 
-    - name: Push to public repo
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.TEST_TOKEN }}
-        repository: 'BugSwarm/test-mirror-public'
+    # - name: Push to public repo
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     github_token: ${{ secrets.TEST_TOKEN }}
+    #     repository: 'BugSwarm/test-mirror-public'
