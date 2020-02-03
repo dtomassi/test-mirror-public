@@ -13,12 +13,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # - name: Configure user
-    #   run: |
-    #     git config --local user.email "action@github.com"
-    #     git config --local user.name "GitHub Action"
-    #     git config user.email
-    #     git config user.name
+    - name: Configure user
+      run: |
+        git config --local user.email "pcding@ucdavis.edu"
+        git config --local user.name "Pengcheng Ding"
 
     - name: Push to public repo
       run: git push "https://kingdido999:${{ secrets.TEST_TOKEN }}@github.com/BugSwarm/test-mirror-public.git"
