@@ -11,16 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Configure user
-      run: |
-        git config --local user.email "pcding@ucdavis.edu"
-        git config --local user.name "Pengcheng Ding"
-
-    - name: Push to public repo
-      run: git push "https://kingdido999:${{ secrets.TEST_TOKEN }}@github.com/BugSwarm/test-mirror-public.git"
-      # uses: ad-m/github-push-action@master
-      # with:
-      #   github_token: ${{ secrets.TEST_TOKEN }}
-      #   repository: 'BugSwarm/test-mirror-public'
+    - name: Publish repo
+      uses: wearerequired/git-mirror-action@master
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      with:
+        source-repo: 'git@github.com:BugSwarm/test-mirror-private.git'
+        destination-repo: 'git@github.com:BugSwarm/test-mirror-public.git'
