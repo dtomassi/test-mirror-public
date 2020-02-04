@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Publish repo
-      uses: wearerequired/git-mirror-action@master
+      uses: BugSwarm/git-mirror-action@master
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       with:
