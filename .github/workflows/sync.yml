@@ -12,6 +12,7 @@ jobs:
 
     steps:
     - name: Push to public repo
+      if: github.repository == 'BugSwarm/test-mirror-private.git'
       uses: BugSwarm/git-mirror-action@master
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
